@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "http-google": {
+      "command": "check-http.rb -u http://google.ru",
+      "interval": 30,
+      "subscribers": ["all"]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+rabbitmq:
+  image: rabbitmq:3-management
+  environment:
+    RABBITMQ_DEFAULT_USER: looper
+    RABBITMQ_DEFAULT_PASS: itskindacoldoutside
+    RABBITMQ_DEFAULT_VHOST: sensu
+
+redis:
+  image: redis
+  # auth can't be set via environment variable (
+
+api:
+  image: etki/sensu-api
+  links:
+    - rabbitmq:amqp
+    - redis:redis
+  environment:
+    SENSU_RABBITMQ_URL: amqp://looper:itskindacoldoutside@amqp:5672/sensu
+    SENSU_REDIS_URL: redis://redis:6379
+    SENSU_LOG_LEVEL: debug
+
+server:
+  image: etki/sensu-server
+  volumes:
+    - ./server/conf.d:/etc/sensu/conf.d
+  links:
+    - rabbitmq:amqp
+    - redis:redis
+  environment:
+    SENSU_RABBITMQ_URL: amqp://looper:itskindacoldoutside@amqp:5672/sensu
+    SENSU_REDIS_URL: redis://redis:6379
+    SENSU_LOG_LEVEL: debug
+
+client:
+  image: etki/sensu-client
+  links:
+    - rabbitmq:amqp
+    - redis:redis
+  environment:
+    SENSU_PLUGINS: http
+    SENSU_RABBITMQ_URL: amqp://looper:itskindacoldoutside@amqp:5672/sensu
+    SENSU_REDIS_URL: redis://redis:6379
+    SENSU_LOG_LEVEL: debug
+    SENSU_CLIENT_SUBSCRIPTIONS: all
+    SENSU_CLIENT_NAME: dummy-client
+    SENSU_API_PORT: 80
+
+
