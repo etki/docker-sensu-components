@@ -186,6 +186,6 @@ simply for formal consistency.
   [sensu-docs]: https://sensuapp.org/docs/latest/
   [sensu-license]: https://github.com/sensu/sensu/blob/master/MIT-LICENSE.txt
   [sensu-scaling]: https://sensuapp.org/docs/latest/installation-summary#scaling-sensu
-  [server-readme]: https://github.com/etki/docker-sensu/blob/master/server/README.md
-  [client-readme]: https://github.com/etki/docker-sensu/blob/master/client/README.md
-  [api-readme]: https://github.com/etki/docker-sensu/blob/master/api/README.md
+  [server-readme]: https://github.com/etki/docker-sensu-components/blob/master/server/README.md
+  [client-readme]: https://github.com/etki/docker-sensu-components/blob/master/client/README.md
+  [api-readme]: https://github.com/etki/docker-sensu-components/blob/master/api/README.md
