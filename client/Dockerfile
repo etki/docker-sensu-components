@@ -1,4 +1,4 @@
-FROM etki/sensu
+FROM etki/sensu:0.21
 MAINTAINER Etki <etki@etki.name>
 
 EXPOSE 3030
