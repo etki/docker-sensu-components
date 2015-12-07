@@ -1,6 +1,6 @@
 ### Sensu unofficial Docker images
 
-This repository
+This repository provides Docker images of [Sensu][sensu] application.
 
 #### What is Sensu?
 
