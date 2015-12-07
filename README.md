@@ -175,6 +175,7 @@ missing/hard-to-understand documentation parts.
 - Move to busybox or alpine instead of centos to reduce image size. Everything
 needed for work should be located in embedded folder (except for `.so`s).
 - Better README for components, especially for base image
+- API user/password
 
 #### Licensing
 
