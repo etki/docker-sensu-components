@@ -22,7 +22,7 @@ checks and alerts, API, that provides access to server, and client, which is
 intended to be run on a node and send data to server via transport. Besides
 that, you'll need transport (RabbitMQ) and storage (Redis) for Sensu
 interoperation, and, most probably, you'll need a GUI to visualize your cluster
-state (see `etki/uchiwa`).
+state (see `uchiwa/uchiwa`).
 
 To bring up your Sensu cluster, you'll need to run at least one copy of server
 and API on your master node and a copy of client on every node. To do so, simply
@@ -89,7 +89,7 @@ may be declared in `conf.d` as well.
 
 If you've done all of the above, you should have a running Sensu cluster. To
 bring in the last part - visualization and proper GUI - you'll need Sensu
-dashboard, which you may find in `etki/uchiwa` image.
+dashboard, which you may find in `uchiwa/uchiwa` image.
 
 #### Stop, stop, i haven't understood a bit about checks and stuff
 
@@ -136,7 +136,7 @@ same as `sensu-plugins-docker` and `sensu-plugins-ponymailer`.
 #### How do i visualize it?
 
 You'll need a dashboard which is shipped separately from Sensu. See
-`etki/uchiwa` image if you want to continue with my containers.
+`uchiwa/uchiwa` image for official distribution.
 
 #### Scaling
 
